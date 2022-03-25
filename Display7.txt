@@ -1,0 +1,35 @@
+void setup() 
+{
+  pinMode(12, OUTPUT);
+}
+
+void loop() 
+{
+  int num = 0;
+	while(TRUE){
+		if (!input(pin_a0)){
+			delay_ms(300);
+			num++;
+			if(num>9){
+				num=0;
+			}
+		}
+	output_b(num);
+	}  
+
+  digitalWrite(12, HIGH);
+  delay(1000);
+  digitalWrite(12, LOW);
+  delay(1000);
+
+	while(TRUE){
+		if (!input(pin_a0)){
+			delay_ms(300);
+			num--;
+			if(num>0){
+				num=9;
+			}
+		}
+	output_b(num);
+	}  
+}
